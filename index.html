@@ -14,7 +14,7 @@
         }
         .gallery img {
             width: 100%;
-            height: auto;
+            height: 200px;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -40,7 +40,6 @@
     </style>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-
 </head>
 <body>
     <!-- Galerijas sadaļa -->
@@ -69,7 +68,7 @@
         }).addTo(map);
 
         // Marķieris
-        var marker = L.marker([56.964130, 24.164246]).addTo(map); // Marķieris RTK
+        var marker = L.marker([56.964130, 24.164246]).addTo(map);
         marker.bindPopup("<b>RTK</b><br>Rīgas Tehniskā Koledža").openPopup();
     </script>
 </body>
