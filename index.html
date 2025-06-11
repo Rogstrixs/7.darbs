@@ -3,21 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attēlu galerija</title>
+    <title>Attēlu Galerija un Karte</title>
     <style>
+        /* Stils galerijai */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 10px;
+            margin: 20px;
         }
         .gallery img {
             width: 100%;
             height: auto;
             object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Stils kartei */
+        #map {
+            width: 100%;
+            height: 500px;
+            margin: 20px 0;
+        }
+
+        /* Vispārējais stils */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0;
         }
     </style>
+    
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
 </head>
 <body>
+    <!-- Galerijas sadaļa -->
+    <h1>Attēlu Galerija</h1>
     <div class="gallery">
         <img src="images/2.jpg" alt="Attēls 2">
         <img src="images/1.jpg" alt="Attēls 1">
@@ -27,5 +56,23 @@
         <img src="images/6.jpg" alt="Attēls 6">
         <img src="images/7.jpg" alt="Attēls 7">
     </div>
+
+    <!-- Kartes sadaļa -->
+    <h2>Karte</h2>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Karte
+        var map = L.map('map').setView([56.964130, 24.164246], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // Marķieris
+        var marker = L.marker([56.964130, 24.164246]).addTo(map); // Marķieris RTK
+        marker.bindPopup("<b>RTK</b><br>Rīgas Tehniskā Koledža").openPopup();
+    </script>
 </body>
 </html>
