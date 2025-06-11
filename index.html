@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attēlu galerija</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="images/2.jpg" alt="Attēls 2">
+        <img src="images/1.jpg" alt="Attēls 1">
+        <img src="images/3.jpg" alt="Attēls 3">
+        <img src="images/4.jpg" alt="Attēls 4">
+        <img src="images/5.jpg" alt="Attēls 5">
+        <img src="images/6.jpg" alt="Attēls 6">
+        <img src="images/7.jpg" alt="Attēls 7">
+    </div>
+</body>
+</html>
